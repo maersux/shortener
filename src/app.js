@@ -7,7 +7,7 @@ import headerAuth from './middleware/headerAuth.js';
 
 import { renderHomePage } from './controllers/homeController.js';
 import { renderAuthPage, handleAuth } from './controllers/authController.js';
-import { shortenUrl, redirectUrl } from './controllers/urlController.js';
+import { shortenUrl, apiShortenUrl, redirectUrl } from './controllers/urlController.js';
 
 const app = express();
 
@@ -32,7 +32,7 @@ app.post('/', sessionAuth, shortenUrl);
 app.get('/authenticate', renderAuthPage);
 app.post('/authenticate', handleAuth);
 
-app.post('/api/shorten', headerAuth, shortenUrl);
+app.post('/api/shorten', headerAuth, apiShortenUrl);
 
 app.get('/:id', redirectUrl);
 
