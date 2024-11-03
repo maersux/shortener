@@ -94,7 +94,12 @@ export const redirectUrl = async (req, res) => {
 	try {
 		const urlData = await redis.hGetAll(id);
 		if (!urlData?.url) {
-			return res.status(404).send('<h1>404 - url not found</h1>');
+			return res.render('layout', {
+				title: 'not found',
+				content: 'content/error',
+				code: 404,
+				message: 'could not find this page'
+			});
 		}
 
 		await redis.hIncrBy(id, 'clickCount', 1);
