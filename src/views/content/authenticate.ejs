@@ -1,0 +1,20 @@
+<h1>maersux' url shortener</h1>
+<h2>authenticate</h2>
+<form method="POST" action="/authenticate">
+    <label for="auth-key">
+        <input
+            type="password"
+            name="authKey"
+            id="auth-key"
+            class="<%= errorMessage ? 'error' : '' %>"
+            placeholder="authorization key"
+            autocomplete="off"
+            autofocus
+            required
+        />
+    </label>
+    <button type="submit">submit</button>
+</form>
+<% if (errorMessage) { %>
+    <p class="error" id="error-message"><%= errorMessage %></p>
+<% } %>
