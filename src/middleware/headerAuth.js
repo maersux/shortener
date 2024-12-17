@@ -1,10 +1,10 @@
 import config from '../../config.js';
 
 const headerAuth = (req, res, next) => {
-	const authHeader = req.headers['authorization'];
+	const authHeader = req.headers['Authorization'];
 
 	if (!authHeader) {
-		return res.status(401).json({ error: 'authorization header missing' });
+		return res.status(401).json({ error: 'Authorization header missing' });
 	}
 
 	if (authHeader === config.admin.password) {

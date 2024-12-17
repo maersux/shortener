@@ -1,0 +1,165 @@
+:root {
+  --color-accent: #e879f9;
+  --color-accent-light: rgba(232, 121, 249, 0.2);
+  --color-accent-dark: #86198f;
+  --color-background: #121212;
+  --color-background-light: #2a2a2a;
+  --color-text: #eeeeee;
+  --color-text-dark: #dddddd;
+  --color-box-shadow: rgba(0, 0, 0, 0.5);
+  --color-error: #ef3e3e;
+}
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #1d011f, #120113 25%, #120113 75%, #1d011f);
+}
+main {
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border: solid 1px var(--color-accent-light);
+  box-shadow: 3px 3px 20px 0 var(--color-box-shadow);
+  color: var(--color-text);
+  animation: scale-up 600ms cubic-bezier(0.18, 0.56, 0.25, 1);
+}
+@keyframes scale-up {
+  from {
+    transform-origin: top;
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform-origin: center;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+h1 {
+  margin-bottom: 0.25rem;
+}
+h2 {
+  margin-bottom: 1.5rem;
+}
+p {
+  margin: 0;
+}
+a.github {
+  color: var(--color-text);
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+a.github:hover {
+  color: var(--color-accent);
+}
+a.github svg {
+  vertical-align: text-bottom;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+form label {
+  width: 100%;
+}
+form input[type='text'],
+form input[type='url'],
+form input[type='password'] {
+  width: 100%;
+  background: transparent;
+  border: 2px solid var(--color-accent-light);
+  color: var(--color-text);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  transition: 150ms;
+  transition-property: background, border;
+  font-family: 'Inter', sans-serif;
+}
+form input[type='text']::placeholder,
+form input[type='url']::placeholder,
+form input[type='password']::placeholder {
+  color: var(--color-text);
+}
+form input[type='text'].error::placeholder,
+form input[type='url'].error::placeholder,
+form input[type='password'].error::placeholder {
+  border-color: var(--color-error);
+}
+form input[type='text']:is(:hover, :focus-visible),
+form input[type='url']:is(:hover, :focus-visible),
+form input[type='password']:is(:hover, :focus-visible) {
+  outline: none;
+  background: var(--color-accent-light);
+}
+form input[type='text']:focus-visible,
+form input[type='url']:focus-visible,
+form input[type='password']:focus-visible {
+  border-color: var(--color-accent);
+}
+form button {
+  background: var(--color-accent-light);
+  border: 2px solid transparent;
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 150ms;
+  transition-property: border, background, color;
+}
+form button:hover {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+}
+form button:active {
+  background: var(--color-accent);
+  color: #000000;
+  border-color: transparent;
+}
+span[data-copy] {
+  cursor: pointer;
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: 150ms;
+  transition-property: color;
+}
+span[data-copy]:hover {
+  color: var(--color-accent-dark);
+}
+span[data-copy] svg {
+  vertical-align: top;
+  margin-left: 0.5rem;
+}
+.error {
+  color: var(--color-error);
+}
+.post-form {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  margin-left: 0.1rem;
+}
+*::selection {
+  background-color: var(--color-accent-dark);
+  color: var(--color-text-dark);
+}
+/*# sourceMappingURL=styles.css.map */
